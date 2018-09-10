@@ -12,7 +12,9 @@ import java.util.regex.Pattern;
  */
 
 public final class Quizzer {
-
+    /**
+    Each question in this quiz is worth 5 points.
+     */
     private static final int POINTS_PER_QUESTION = 5;
 
     /**
@@ -37,7 +39,20 @@ public final class Quizzer {
     public static int computeScore(final Boolean diversityAnswerCorrect,
             final Boolean illiacAnswerCorrect, final Boolean mosaicAnswerCorrect,
             final Boolean variableAnswerCorrect) {
-        return true;
+        int score = 0;
+        if (illiacAnswerCorrect) {
+            score = score + POINTS_PER_QUESTION;
+        }
+        if (mosaicAnswerCorrect) {
+            score = score + POINTS_PER_QUESTION;
+        }
+        if (diversityAnswerCorrect) {
+            score = score + POINTS_PER_QUESTION;
+        }
+        if (variableAnswerCorrect) {
+            score = score + POINTS_PER_QUESTION;
+        }
+        return score;
     }
 
     /* *******************************************************************************************
