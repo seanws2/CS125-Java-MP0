@@ -24,11 +24,11 @@ public class MinimumOfFirstN {
      * @return the minimum of the first N values in the array
      */
     public static double minimumOfFirstN(final double[] doubles, final int n) {
-        double min = doubles[0];
         int slot;
         if (n <= 0) {
             return 0.0;
         } else {
+            double min = doubles[0];
             for (slot = 1; slot < n; slot++) {
                 if (doubles[slot] < min) {
                     min = doubles[slot];

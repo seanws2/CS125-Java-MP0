@@ -15,7 +15,7 @@ public final class LCM {
      * The input 0 is invalid.
      */
 
-    public static final int LCM_INVALID = 0;
+    public static final int LCM_INVALID = -1;
 
     /**
      * Returns the least common multiple of two integers.
@@ -33,22 +33,37 @@ public final class LCM {
      */
     public static int lcm(final int first, final int second) {
         int lcmVal;
+        int larger;
+        int newFirst = first;
+        int newSecond = second;
+
+
+        if (newFirst < 0) {
+            newFirst = newFirst * -1;
+        }
+        if (newSecond < 0) {
+            newSecond = newSecond * -1;
+        }
+        int multiple = newFirst * newSecond;
+        lcmVal = multiple;
         if (first == 0 || second == 0) {
             return LCM_INVALID;
-        } else {
-        if (first >= second) {
-            lcmVal = first;
-        } else {
-            lcmVal = second;
         }
-        while (true) {
-            if (lcmVal % first == 0 && lcmVal % second == 0 && lcmVal > 0) {
+        if (newFirst >= newSecond) {
+            larger = newFirst;
+        } else {
+            larger = newSecond;
+            }
+            for (int i = 1; i <= multiple; i++) {
+            int temp = larger * i;
+            if (temp % newFirst == 0 && temp % newSecond == 0) {
+                lcmVal = temp;
                 break;
             }
-            lcmVal++;
+
         }
             return lcmVal;
-        }
+
 
     }
 
