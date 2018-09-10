@@ -35,15 +35,14 @@ public final class LCM {
         int lcmVal;
         if (first == 0 || second == 0) {
             return LCM_INVALID;
-        }
-        else {
+        } else {
         if (first >= second) {
             lcmVal = first;
         } else {
             lcmVal = second;
         }
         while (true) {
-            if (lcmVal % first == 0 && lcmVal % second == 0 && lcmVal != 0) {
+            if (lcmVal % first == 0 && lcmVal % second == 0 && lcmVal > 0) {
                 break;
             }
             lcmVal++;
