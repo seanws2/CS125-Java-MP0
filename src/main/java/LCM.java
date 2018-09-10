@@ -33,18 +33,24 @@ public final class LCM {
      */
     public static int lcm(final int first, final int second) {
         int lcmVal;
+        if (first == 0 || second == 0) {
+            return LCM_INVALID;
+        }
+        else {
         if (first >= second) {
             lcmVal = first;
         } else {
             lcmVal = second;
         }
         while (true) {
-            if (lcmVal % first == 0 && lcmVal % second == 0) {
+            if (lcmVal % first == 0 && lcmVal % second == 0 && lcmVal != 0) {
                 break;
             }
             lcmVal++;
         }
-        return lcmVal;
+            return lcmVal;
+        }
+
     }
 
     /* ********************************************************************************************
