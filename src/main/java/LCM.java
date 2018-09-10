@@ -32,7 +32,7 @@ public final class LCM {
      * @see <a href="https://en.wikipedia.org/wiki/Least_common_multiple">Least common multiple</a>
      */
     public static int lcm(final int first, final int second) {
-        int lcmVal;
+        int lcmNum;
         int larger;
         int newFirst = first;
         int newSecond = second;
@@ -45,7 +45,7 @@ public final class LCM {
             newSecond = newSecond * -1;
         }
         int multiple = newFirst * newSecond;
-        lcmVal = multiple;
+        lcmNum = multiple;
         if (first == 0 || second == 0) {
             return LCM_INVALID;
         }
@@ -57,12 +57,12 @@ public final class LCM {
             for (int i = 1; i <= multiple; i++) {
             int temp = larger * i;
             if (temp % newFirst == 0 && temp % newSecond == 0) {
-                lcmVal = temp;
+                lcmNum = temp;
                 break;
             }
 
         }
-            return lcmVal;
+            return lcmNum;
 
 
     }
