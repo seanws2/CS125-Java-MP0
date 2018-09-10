@@ -11,7 +11,11 @@ import java.util.Scanner;
  */
 public final class LCM {
 
-    public static final int LCM_INVALID = -1;
+    /**
+     * The input 0 is invalid.
+     */
+
+    public static final int LCM_INVALID = 0;
 
     /**
      * Returns the least common multiple of two integers.
@@ -28,7 +32,19 @@ public final class LCM {
      * @see <a href="https://en.wikipedia.org/wiki/Least_common_multiple">Least common multiple</a>
      */
     public static int lcm(final int first, final int second) {
-        return 0.0;
+        int lcmVal;
+        if (first >= second) {
+            lcmVal = first;
+        } else {
+            lcmVal = second;
+        }
+        while (true) {
+            if (lcmVal % first == 0 && lcmVal % second == 0) {
+                break;
+            }
+            lcmVal++;
+        }
+        return lcmVal;
     }
 
     /* ********************************************************************************************
